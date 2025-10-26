@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><style>
+    nav {
+        background-color: black;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap:10px;
+    }
+
+
+    li>a {
+        display: block;
+        padding: 10px;
+        color: white;
+    }
+</style>
+</head>
+
+
+<body>
+    <nav></nav>
+
+
+    <script>
+        let nav=document.querySelector("nav");
+        let items = ["home", "products", "contact us"];
+        let ul=document.createElement("ul");
+        for (let i = 0; i < items.length; i++) {
+            let li=document.createElement("li");
+            let a=document.createElement("a");
+            a.textContent=items[i];
+            a.href="#";
+            li.appendChild(a);
+            ul.appendChild(li);
+
+        }
+      nav.appendChild(ul);
+
+    </script>
+</body>
+
+</html>

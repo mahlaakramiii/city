@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        header {
+            padding: 50px;
+            background-color: black;
+
+
+        }
+
+        header>h1 {
+            color: aliceblue;
+            text-align: center;
+        }
+
+        main {
+            display: grid;
+            grid-template-areas:
+                'sidebar citydetails citydetails'
+            ;
+        }
+
+        aside {
+            grid-area: sidebar;
+            background-color: #999;
+            padding: 30px;
+        }
+
+        aside>a {
+            display: block;
+            padding: 5px;
+        }
+
+        section {
+            grid-area: citydetails;
+            padding: 30px;
+            background-color: #bbb;
+        }
+
+        footer {
+            background-color: #333;
+            padding: 30px;
+
+        }
+
+        footer>h2 {
+            color: aliceblue;
+            text-align: center;
+
+        }
+
+        @media(max-width:700px) {
+            main {
+                grid-template-areas:
+                    'sidebar'
+                    'citydetails';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>cities</h1>
+    </header>
+    <main>
+        <aside><a href="#" onclick="getcityname(0)">
+                londen
+            </a>
+            <a href="#" onclick="getcityname(1)">
+                paris
+            </a>
+            <a href="#" onclick="getcityname(2)">
+                tokyo
+            </a>
+        </aside>
+        <section>
+            <h2 id="cname">london</h2>
+            <p id="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo repellat a cum quas, quo
+                cupiditate.
+                Enim perferendis soluta velit odit nam. Et, suscipit asperiores rerum hic soluta quia illo nihil.</p>
+            <p id="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate similique dolores
+                laudantium ex
+                asperiores impedit sapiente obcaecati, iste pariatur sed porro mollitia corrupti cumque doloribus, quam
+                fugit necessitatibus soluta perspiciatis?</p>
+        </section>
+
+    </main>
+    <footer>
+        <h2>footer</h2>
+    </footer>
+
+    <script>
+        let cityname = document.getElementById("cname");
+         let info= document.getElementById("info");
+          let desc = document.getElementById("desc");
+        let cities = [{
+            city: "londen",
+            info: "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations",
+            detail: "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations"
+        },
+        {
+            city: "paris",
+            info: "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré. ",
+            detail: "he city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré"
+        },
+            
+             {
+            city: "tokyo",
+            info: "Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. ",
+            detail: "The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater"
+        }
+        ];
+        function getcityname(para) {
+            cityname.textContent = cities[para].city;
+            info.textContent = cities[para].info;
+            desc.textContent = cities[para].desc;
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
